@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cycle2 Overlay Test</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+	<script>
+		$(function(){
+			$('#gallery').cycle({
+				'next':'#gallery',
+				//'overlay':'#overlay',
+				//'overlay-template':'{{title}}'
+				'overlayTemplate':'{{slideNum}}'
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="gallery">
+		<img src="../_/img/icons/touch.png" data-cycle-desc="Desc1" data-cycle-title="Title1" alt="">
+		<img src="../_/img/icons/touch.png" data-cycle-desc="Desc2" data-cycle-title="Title2" alt="">
+		<img src="../_/img/icons/touch.png" data-cycle-desc="Desc3" data-cycle-title="Title3" alt="">
+		<div id="overlay" class="cycle-overlay"></div>
+	</div>
+
+</body>
+</html>
