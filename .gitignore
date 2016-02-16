@@ -2,5 +2,5 @@
 
 .ftpauth
 .ftpconfig
-.sass_cache/
+.sass-cache/
 node_modules/
