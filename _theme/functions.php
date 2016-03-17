@@ -432,25 +432,39 @@ function ch_ajax_get() {
 /*------------------------------------*\
 	URLS / PERMALINKS
 \*------------------------------------*/
-add_filter( 'request', 'ch_request', 99 );
-function ch_request( $req ) {
-	if (empty($req)) {
-		$req[post_type] = "gallery";
-		$req[category_name] = "home";
-		//$req[nopaging] = "true";
-	}
-	return $req;
-}
 
-//add_rewrite_rule('^/?','index.php?post_type=gallery&category=home','top');
-//add_rewrite_rule('^/?','index.php?post_type=gallery&category=home','top');
+// match about and contact pages
+// (they don't automatically, because post_type gallery slug is set to '/', I think)
 add_rewrite_rule('^(about|contact)/?','index.php?pagename=$matches[1]','top');
+// just needed on changes:
+// flush_rewrite_rules();
 
-// TODO: add rules for all categories
-// why doesn't nopaging=true, or posts_per_page=-1 work here?
-add_rewrite_rule('^(selection|category|tag)/([^/]+)/?','index.php?&post_type=gallery&category_name=$matches[2]','top');
-add_rewrite_rule('^([^/]+)/?','index.php?post_type=gallery&name=$matches[1]','top');
-flush_rewrite_rules();
+// alter loop for custom front page
+add_action("pre_get_posts", "ch_custom_front_page");
+function ch_custom_front_page($wp_query) {
+   if ( is_admin() ) return;
+   if ( !$wp_query->is_main_query() ) return;
+
+   // set front page to gallery archive in category home
+   if ( $wp_query->is_front_page() ) {
+      $wp_query->set( 'post_type', array('gallery') );
+      $wp_query->set( 'category_name', 'home' );
+      // // $wp_query->set('page_id', ''); // empty page id
+      // // fix conditional fucntions like is_front_page or is_single ect
+      $wp_query->is_front_page = 1;
+      $wp_query->is_home = 1;
+      $wp_query->is_archive = 1;
+      $wp_query->is_post_type_archive = 1;
+      // // $wp_query->is_page = 0;
+      // // $wp_query->is_singular = 0;
+   }
+
+   // make single gallery sites work
+   if ( $wp_query->is_single() ) {
+      $wp_query->set('post_type', array('gallery', 'page'));
+   }
+   // hlog($wp_query);
+}
 
 
 

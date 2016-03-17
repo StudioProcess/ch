@@ -4,12 +4,12 @@
 function hlog($x, $title="") {
 	echo '<!-- ' . $title . ' --' . PHP_EOL;
 	print_r($x);
-	echo '-->' . PHP_EOL;
+	echo PHP_EOL . '-->' . PHP_EOL;
 }
 
 // query vars that will be extracted from GET, POST and permalink parsing
 // args: array of query vars
-//add_filter( 'query_vars', 'debug_query_vars', 99 );
+// add_filter( 'query_vars', 'debug_query_vars', 99 );
 function debug_query_vars( $qvars ) {
 	hlog($qvars, 'query_vars');
 	return $qvars;
@@ -39,7 +39,7 @@ function debug_page_rewrite_rules( $rules ) {
 
 // runs after all rewrite rules have been generated (need to call flush_rewrite_rules())
 // args: WP_Rewrite object
-//add_filter( 'generate_rewrite_rules', 'debug_generate_rewrite_rules', 99 );
+// add_filter( 'generate_rewrite_rules', 'debug_generate_rewrite_rules', 99 );
 function debug_generate_rewrite_rules( $r ) {
 	hlog($r, 'generate_rewrite_rules');
 	//hlog( count($r->rules) );
@@ -58,7 +58,7 @@ function debug_rewrite_rules_array( $rules ) {
 
 // modify query vars before database query is run
 // args: array( query_var => value )
-add_filter( 'request', 'debug_request', 99 );
+// add_filter( 'request', 'debug_request', 99 );
 function debug_request( $req ) {
 	hlog($req, 'request');
 	return $req;
@@ -66,7 +66,7 @@ function debug_request( $req ) {
 
 // modify query vars. is_ variables are already set
 // args: WP_Query object
-//add_filter( 'pre_get_posts', 'debug_pre_get_posts', 99 );
+// add_filter( 'pre_get_posts', 'debug_pre_get_posts', 99 );
 function debug_pre_get_posts( $query ) {
 	if ( $query->is_main_query() ) { // otherwise will use other queries like nav menus
 		hlog($query, 'pre_get_posts');

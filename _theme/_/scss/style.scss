@@ -155,7 +155,7 @@ $margin: (50/1440*100%);
 /*------------------------------------*\
 	INDEX
 \*------------------------------------*/
-body.post-type-archive-gallery {
+body.archive {
 	main { text-align:center; }
 	article {
 		display:inline-block;
@@ -211,7 +211,7 @@ body.post-type-archive-gallery {
 }
 
 // disable hover on touch devices
-html.touch body.post-type-archive-gallery {
+html.touch body.archive {
 	article:hover h2 { opacity:0; }
 }
 
@@ -325,7 +325,7 @@ html.desktop {
 	min-width:640px;
 
 	/* INDEX */
-	body.post-type-archive-gallery {
+	body.archive {
 		opacity:0;
 		width:100%;
 		position:absolute;
@@ -406,7 +406,7 @@ html.desktop {
 		.backlink { margin-bottom: 3rem; }
 	}
 
-	body.post-type-archive-gallery {
+	body.archive {
 		#info {
 			opacity:0;
 			position:fixed;

@@ -542,19 +542,19 @@ input:focus {
 /*------------------------------------*\
 	INDEX
 \*------------------------------------*/
-body.post-type-archive-gallery main {
+body.archive main {
   text-align: center;
 }
-body.post-type-archive-gallery article {
+body.archive article {
   display: inline-block;
   vertical-align: middle;
   position: relative;
   zoom: 0.66;
 }
-body.post-type-archive-gallery article .thumb {
+body.archive article .thumb {
   display: inline-block;
 }
-body.post-type-archive-gallery article h2 {
+body.archive article h2 {
   position: absolute;
   margin: 0;
   top: 0;
@@ -569,7 +569,7 @@ body.post-type-archive-gallery article h2 {
   text-align: center;
   pointer-events: none;
 }
-body.post-type-archive-gallery article h2:before {
+body.archive article h2:before {
   content: '';
   display: inline-block;
   height: 100%;
@@ -577,36 +577,36 @@ body.post-type-archive-gallery article h2:before {
   margin-right: -0.25em;
   /* Adjusts for spacing */
 }
-body.post-type-archive-gallery article h2 a {
+body.archive article h2 a {
   display: inline-block;
   vertical-align: middle;
   max-width: 90%;
   width: 100%;
 }
-body.post-type-archive-gallery article.teaser {
+body.archive article.teaser {
   zoom: initial;
   width: 350px;
   text-align: center;
 }
-body.post-type-archive-gallery article.teaser .content a {
+body.archive article.teaser .content a {
   font-family: "King", Courier, serif;
   font-size: 1.2rem;
   text-decoration: none;
 }
-body.post-type-archive-gallery article.teaser .content a:hover {
+body.archive article.teaser .content a:hover {
   border-bottom: 1px solid #444;
 }
-body.post-type-archive-gallery article:hover h2 {
+body.archive article:hover h2 {
   opacity: 1;
 }
-body.post-type-archive-gallery article {
+body.archive article {
   margin: 1em;
 }
-body.post-type-archive-gallery article img {
+body.archive article img {
   max-width: none;
 }
 
-html.touch body.post-type-archive-gallery article:hover h2 {
+html.touch body.archive article:hover h2 {
   opacity: 0;
 }
 
@@ -736,7 +736,7 @@ html.desktop {
   /* ABOUT, CONTACT */
   /* GALLERY */
 }
-html.desktop body.post-type-archive-gallery {
+html.desktop body.archive {
   opacity: 0;
   width: 100%;
   position: absolute;
@@ -744,24 +744,24 @@ html.desktop body.post-type-archive-gallery {
   bottom: 0;
   overflow: auto;
 }
-html.desktop body.post-type-archive-gallery.scroll-lock, html.desktop body.post-type-archive-gallery .scroll-lock {
+html.desktop body.archive.scroll-lock, html.desktop body.archive .scroll-lock {
   overflow: hidden;
 }
-html.desktop body.post-type-archive-gallery.ready {
+html.desktop body.archive.ready {
   opacity: 1;
   -webkit-transition: opacity 1s;
           transition: opacity 1s;
 }
-html.desktop body.post-type-archive-gallery article {
+html.desktop body.archive article {
   zoom: 1;
 }
-html.desktop body.post-type-archive-gallery .gallery {
+html.desktop body.archive .gallery {
   background-color: #ddd;
 }
-html.desktop body.post-type-archive-gallery .gallery img {
+html.desktop body.archive .gallery img {
   opacity: 0;
 }
-html.desktop body.post-type-archive-gallery .gallery img.load {
+html.desktop body.archive .gallery img.load {
   opacity: 1;
   -webkit-transition: opacity 0.5s;
           transition: opacity 0.5s;
@@ -835,7 +835,7 @@ html.desktop #contact .imprint {
 html.desktop #about .backlink, html.desktop #contact .backlink {
   margin-bottom: 3rem;
 }
-html.desktop body.post-type-archive-gallery #info {
+html.desktop body.archive #info {
   opacity: 0;
   position: fixed;
   top: 0;
@@ -849,13 +849,13 @@ html.desktop body.post-type-archive-gallery #info {
   -webkit-transition: height 1s 0, opacity 0.25s 1s;
           transition: height 1s 0, opacity 0.25s 1s;
 }
-html.desktop body.post-type-archive-gallery #info.opening, html.desktop body.post-type-archive-gallery #info.open {
+html.desktop body.archive #info.opening, html.desktop body.archive #info.open {
   height: 100%;
   opacity: 1;
   -webkit-transition: opacity 0.25s 0, height 1s 0.25s;
           transition: opacity 0.25s 0, height 1s 0.25s;
 }
-html.desktop body.post-type-archive-gallery #info > *[id] {
+html.desktop body.archive #info > *[id] {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.75s 0, visibility 0 0.75s;
@@ -863,7 +863,7 @@ html.desktop body.post-type-archive-gallery #info > *[id] {
   position: absolute;
   top: 100px;
 }
-html.desktop body.post-type-archive-gallery #info.open > *.opening, html.desktop body.post-type-archive-gallery #info.open > *.open {
+html.desktop body.archive #info.open > *.opening, html.desktop body.archive #info.open > *.open {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.75s 0, visibility 0;
