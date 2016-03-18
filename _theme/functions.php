@@ -376,7 +376,7 @@ function ch_inject_teaser( $posts, $q ) {
 		global $ch_teaser_id, $ch_teaser_fallpack_pos;
 		$teaser = get_post($ch_teaser_id);
 		$pos = $teaser->menu_order;
-      hlog($pos);
+      // hlog($pos);
 		if (!$pos) $pos = $ch_teaser_fallpack_pos;
 		array_splice( $posts, $pos, 0, array($teaser) ); // inject
 	}
@@ -423,7 +423,11 @@ function ch_ajax_get() {
 		echo '<div class="loadanim"></div>'.PHP_EOL;
 	} else {
 		$id = intval( $id );
-		query_posts( 'post_type=gallery&p=' . $id );
+		// query_posts( 'post_type=gallery&p=' . $id );
+      query_posts( array(
+         'post_type' => array('gallery', 'christina'),
+         'p' => $id
+      ));
 		get_template_part( 'content-gallery' );
 	}
 	die(); // this is required to return a proper result
@@ -438,6 +442,9 @@ function ch_ajax_get() {
 add_rewrite_rule('^(about|contact)/?','index.php?pagename=$matches[1]','top');
 // just needed on changes:
 // flush_rewrite_rules();
+
+
+add_rewrite_rule('^christina/([^/]+)/?','index.php?christina=$matches[1]','top');
 
 // alter loop for custom front page
 add_action("pre_get_posts", "ch_custom_front_page");
@@ -460,8 +467,13 @@ function ch_custom_front_page($wp_query) {
    }
 
    // make single gallery sites work
-   if ( $wp_query->is_single() ) {
-      $wp_query->set('post_type', array('gallery', 'page'));
+   if ( $wp_query->is_single() && !isset($wp_query->query[post_type]) ) {
+      $wp_query->set('post_type', array('gallery', 'page', 'christina'));
+   }
+
+   if ( $wp_query->is_archive() ) {
+      $wp_query->set( 'orderby', 'menu_order' );
+      $wp_query->set( 'order', 'ASC' );
    }
    // hlog($wp_query);
 }

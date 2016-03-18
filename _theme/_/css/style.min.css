@@ -669,11 +669,28 @@ body.about section.about .portrait {
   display: none;
 }
 
-body.single-gallery .info {
+body.single .info {
   display: none;
 }
-body.single-gallery .img {
+body.single .img {
   margin-bottom: 3.47222%;
+}
+body.single h1, body.single .img {
+  text-align: center;
+}
+
+/*------------------------------------*\
+	PASSWORD FORM
+\*------------------------------------*/
+.post-password-form {
+  text-align: center;
+  padding: 5em 2em;
+  margin: 0 5em;
+  background-color: grey;
+  color: white;
+}
+.post-password-form input {
+  color: grey;
 }
 
 /*------------------------------------*\

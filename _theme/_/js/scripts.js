@@ -631,7 +631,7 @@
 		/* ABOUT + CONTACT */
 		var infoLoader = $.ajaxload({
 			'target' : '#info',
-			'triggerTarget' : 'body.post-type-archive-gallery',
+			'triggerTarget' : 'body.archive',
 			'triggerSelector' : '#menu-item-184 a, #menu-item-183 a, #194 a',
 			'triggerEvent' : 'click',
 			'ajaxURL' : root.AJAX.ajaxurl,
@@ -716,7 +716,7 @@
 		});
 
 		// home link (logo)
-		$('body.post-type-archive-gallery .logo').on( 'click', homeHandler );
+		$('body.archive .logo').on( 'click', homeHandler );
 
 		$('body').on('click', '.gallery', function(e) {
 			route( '/' + $(e.currentTarget).data('slug') + '/' );

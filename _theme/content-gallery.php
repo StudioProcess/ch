@@ -20,7 +20,13 @@
 		</div>
 		<!-- /images -->
 		<div class="info"><span class="counter"></span> <span class="title"><?php the_title(); ?></span></div>
-		<div class="backlink"><a  href="/">(go back)</a></div>
+		<div class="backlink">
+         <?php if (get_post_type() == "christina") : ?>
+            <a  href="/christina">(go back)</a>
+         <?php else : ?>
+            <a  href="/">(go back)</a>
+         <?php endif; ?>
+      </div>
 		<div class="loadanim"></div>
 	</article>
 	<!-- /article -->

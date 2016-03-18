@@ -259,12 +259,32 @@ body.about {
 
 .loadanim { display:none; }
 
-body.single-gallery {
+body.single {
 	.info { display:none; }
 
     .img {
 		margin-bottom:$margin;
     }
+
+    h1, .img {
+      text-align: center;
+   }
+
+}
+
+
+/*------------------------------------*\
+	PASSWORD FORM
+\*------------------------------------*/
+.post-password-form {
+   text-align: center;
+   padding: 5em 2em;
+   margin:0 5em;
+   background-color: grey;
+   color:white;
+   input {
+      color:grey;
+   }
 }
 
 

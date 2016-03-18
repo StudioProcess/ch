@@ -48,13 +48,13 @@ function debug_generate_rewrite_rules( $r ) {
 
 // the rules array from inside the WP_Rewrite object (need to call flush_rewrite_rules())
 // args: array( pattern -> rewritten url)
-//add_filter('rewrite_rules_array', 'debug_rewrite_rules_array');
+// add_filter('rewrite_rules_array', 'debug_rewrite_rules_array');
 function debug_rewrite_rules_array( $rules ) {
 	hlog($rules, 'rewrite_rules_array');
 	hlog( count($rules) );
 	return $rules;
 }
-//flush_rewrite_rules();
+// flush_rewrite_rules();
 
 // modify query vars before database query is run
 // args: array( query_var => value )
