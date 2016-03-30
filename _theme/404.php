@@ -1,3 +1,5 @@
+<?php wp_redirect( home_url() ); exit; ?>
+
 <?php get_header(); ?>
 
 	<main role="main">
