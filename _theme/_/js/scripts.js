@@ -69,12 +69,12 @@
 
 			request = undefined;
 			state = 'loading';
+         startTimer();
 			trigger.fireWith( e, [e] );
 
 			if (state === 'aborted') return; // trigger callback can abort this
 
 			$target.removeClass('done').removeClass('fail').addClass('loading');
-			startTimer();
 
 			// check data for functions and replace them with their return values
 			var ajaxData = $.extend( {}, opts.ajaxData );
@@ -710,9 +710,13 @@
 			var $cycleContainer = $('#gallery .images');
 			$cycleContainer.cycle('destroy').cycle(cycleOptions);
 			$('.backlink a').off('click').on( 'click', homeHandler );
-			$('#gallery img').on('load', function(e) { $(e.target).addClass('load'); });
+			$('#gallery img').on('load', function(e) {
+            // console.log('img loaded', e);
+            $(e.target).addClass('load');
+         });
 			centerGallery.enable();
 			transition.gallery();
+         $('#gallery .img').prepend('<div class="loadanim" style="opacity:1;z-index:0;"></div>');
 		});
 
 		// home link (logo)

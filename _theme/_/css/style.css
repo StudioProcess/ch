@@ -718,7 +718,6 @@ body.single h1, body.single .img {
   height: 0.8rem;
   border-radius: 50%;
   background-color: #444;
-  box-shadow: 1px 1px rgba(68, 68, 68, 0.25);
 }
 .loadanim:before, .loadanim:after {
   content: ' ';
@@ -933,6 +932,7 @@ html.desktop #gallery .images img {
   height: 100%;
   width: auto;
   opacity: 0;
+  position: relative;
 }
 html.desktop #gallery .images img.load {
   opacity: 1;

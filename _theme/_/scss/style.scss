@@ -313,7 +313,7 @@ body.single {
 		height:$size;
 		border-radius:50%;
 		background-color:$color-fg;
-		box-shadow: 1px 1px rgba($color-fg, 0.25);
+		// box-shadow: 1px 1px rgba($color-fg, 0.25);
 	}
 
 	&:before, &:after {
@@ -509,7 +509,7 @@ html.desktop {
 					&.next { right:0; cursor:url('../img/cursors/arrow-right.png'),e-resize; }
 				}
 			}
-			img { display:inline-block; height:100%; width:auto; opacity:0;
+			img { display:inline-block; height:100%; width:auto; opacity:0; position:relative;
 				&.load { opacity:1; transition:opacity $t-fade-imgs; }
 			}
 		}
