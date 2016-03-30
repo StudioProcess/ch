@@ -367,7 +367,11 @@ html.desktop {
 			img { opacity:0;
 				&.load { opacity:1; transition:opacity $t-fade-thumbs; }
 			}
+			&.teaser {
+				background-color: white;
+			}
 		}
+
 	}
 
 
@@ -391,7 +395,7 @@ html.desktop {
 		.nav { right:0; }
 	}
 
-	footer { text-align:center; margin-top:4rem; margin-bottom:2.5rem; }
+	footer { text-align:center; margin-top:4rem; margin-bottom:7.5rem; }
 
 	main {
 		margin-top:$header-height;

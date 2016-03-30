@@ -366,7 +366,7 @@ $ch_teaser_id = 194;
 /* show teaser in galleries (frontend & admin) */
 add_filter('the_posts', 'ch_inject_teaser', 10, 2);
 function ch_inject_teaser( $posts, $q ) {
-	if ( $q->is_main_query() && $q->is_post_type_archive('gallery') ) {
+	if ( $q->is_main_query() && ($q->is_post_type_archive('gallery') || $q->is_category()) || $q->is_post_type_archive('christina')) {
 		// skip admin trash, drafs
 		$status = $q->get('post_status');
 		if ( is_admin() && ($status == 'trash' || $status == 'draft') )

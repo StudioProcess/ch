@@ -188,7 +188,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -305,8 +304,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -330,7 +328,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -415,7 +412,6 @@ th {
 *,
 *:after,
 *:before {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -564,8 +560,7 @@ body.archive article h2 {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  -webkit-transition: opacity 0.25s;
-          transition: opacity 0.25s;
+  transition: opacity 0.25s;
   text-align: center;
   pointer-events: none;
 }
@@ -766,8 +761,7 @@ html.desktop body.archive.scroll-lock, html.desktop body.archive .scroll-lock {
 }
 html.desktop body.archive.ready {
   opacity: 1;
-  -webkit-transition: opacity 1s;
-          transition: opacity 1s;
+  transition: opacity 1s;
 }
 html.desktop body.archive article {
   zoom: 1;
@@ -780,8 +774,10 @@ html.desktop body.archive .gallery img {
 }
 html.desktop body.archive .gallery img.load {
   opacity: 1;
-  -webkit-transition: opacity 0.5s;
-          transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+html.desktop body.archive .gallery.teaser {
+  background-color: white;
 }
 html.desktop header {
   width: 93.05556%;
@@ -814,7 +810,7 @@ html.desktop header .nav {
 html.desktop footer {
   text-align: center;
   margin-top: 4rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 7.5rem;
 }
 html.desktop main {
   margin-top: 100px;
@@ -863,28 +859,24 @@ html.desktop body.archive #info {
   width: 100%;
   overflow: scroll;
   background-color: #fff;
-  -webkit-transition: height 1s 0, opacity 0.25s 1s;
-          transition: height 1s 0, opacity 0.25s 1s;
+  transition: height 1s 0, opacity 0.25s 1s;
 }
 html.desktop body.archive #info.opening, html.desktop body.archive #info.open {
   height: 100%;
   opacity: 1;
-  -webkit-transition: opacity 0.25s 0, height 1s 0.25s;
-          transition: opacity 0.25s 0, height 1s 0.25s;
+  transition: opacity 0.25s 0, height 1s 0.25s;
 }
 html.desktop body.archive #info > *[id] {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.75s 0, visibility 0 0.75s;
-          transition: opacity 0.75s 0, visibility 0 0.75s;
+  transition: opacity 0.75s 0, visibility 0 0.75s;
   position: absolute;
   top: 100px;
 }
 html.desktop body.archive #info.open > *.opening, html.desktop body.archive #info.open > *.open {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 0.75s 0, visibility 0;
-          transition: opacity 0.75s 0, visibility 0;
+  transition: opacity 0.75s 0, visibility 0;
 }
 html.desktop #gallery {
   width: 100%;
@@ -899,22 +891,19 @@ html.desktop #gallery {
   z-index: 1;
   overflow: hidden;
   height: 0%;
-  -webkit-transition: opacity 1s 0, height 0 1s;
-          transition: opacity 1s 0, height 0 1s;
+  transition: opacity 1s 0, height 0 1s;
 }
 html.desktop #gallery.opening, html.desktop #gallery.open {
   height: 100%;
   opacity: 1;
-  -webkit-transition: height 0, opacity 1s;
-          transition: height 0, opacity 1s;
+  transition: height 0, opacity 1s;
 }
 html.desktop #gallery article {
   margin: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
-  -webkit-transition: opacity 0.75s;
-          transition: opacity 0.75s;
+  transition: opacity 0.75s;
 }
 html.desktop #gallery article.opening, html.desktop #gallery article.open {
   opacity: 1;
@@ -954,8 +943,7 @@ html.desktop #gallery .images img {
 }
 html.desktop #gallery .images img.load {
   opacity: 1;
-  -webkit-transition: opacity 0.5s;
-          transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 html.desktop #gallery h1 {
   display: none;
@@ -987,13 +975,11 @@ html.desktop #gallery .backlink {
 html.desktop .loadanim {
   display: block;
   opacity: 0;
-  -webkit-transition: opacity 0;
-          transition: opacity 0;
+  transition: opacity 0;
 }
 html.desktop #gallery.delayed .loadanim, html.desktop #info.delayed .loadanim {
   opacity: 1;
-  -webkit-transition: opacity 0.5s;
-          transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 /*------------------------------------*\

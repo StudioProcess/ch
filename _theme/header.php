@@ -16,6 +16,8 @@
 		<meta itemprop="foundingDate" name="foundingDate" content="2001-04-01">
 		<meta itemprop="legalName" name="legalName" content="<?php echo get_bloginfo('name'); ?>">
 
+		<link href="<?php echo home_url('/architecture'); ?>" rel="next"> 
+
 		<?php wp_head(); ?>
 
 	</head>

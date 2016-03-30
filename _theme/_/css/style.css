@@ -769,6 +769,9 @@ html.desktop body.archive .gallery img.load {
   opacity: 1;
   transition: opacity 0.5s;
 }
+html.desktop body.archive .gallery.teaser {
+  background-color: white;
+}
 html.desktop header {
   width: 93.05556%;
   max-width: 1920px;
@@ -800,7 +803,7 @@ html.desktop header .nav {
 html.desktop footer {
   text-align: center;
   margin-top: 4rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 7.5rem;
 }
 html.desktop main {
   margin-top: 100px;
