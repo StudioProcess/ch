@@ -515,6 +515,13 @@
 		'centerHorz': true
 	};
 
+   var backHandler = function( e ) {
+      e.preventDefault();
+      window.history.back();
+      console.log('back');
+      return false;
+   };
+
 
 	/* AJAX & TRANSITIONS */
 	$(function() {
@@ -679,7 +686,7 @@
 			});
 
 			// backlinks
-			$('.backlink a').off('click').on( 'click', homeHandler );
+			$('.backlink a').off('click').on( 'click', backHandler );
 		});
 
 
@@ -694,8 +701,11 @@
 		content = $.Drawer( '#gallery article', 500, 500 ),
 
 		homeHandler = function( e ) {
-			//transition.home();
-			route('/');
+         if ( $('body').hasClass('home') && $('#info, #gallery').hasClass('open') ) {
+            route('/');
+         } else {
+            window.location = window.location.hostname; // hard reload
+         }
 			e.preventDefault();
 		};
 
@@ -709,7 +719,7 @@
 		galleryLoader.done( function() {
 			var $cycleContainer = $('#gallery .images');
 			$cycleContainer.cycle('destroy').cycle(cycleOptions);
-			$('.backlink a').off('click').on( 'click', homeHandler );
+			$('.backlink a').off('click').on( 'click', backHandler );
 			$('#gallery img').on('load', function(e) {
             // console.log('img loaded', e);
             $(e.target).addClass('load');
@@ -789,7 +799,7 @@
 			if (link.href != '.' && ga && link.hostname && link.protocol && link.pathname) {
 				// TODO: set cycle2 prev/next link anchors via events. use real links
 				var opts =  {
-	 				'page': link.pathname,
+					'page': link.pathname,
 					'location': link.protocol + '//' + link.hostname + link.pathname,
 					'title': link.pathname.replace(/\//g,'')
 				};
@@ -798,5 +808,11 @@
 			}
 		});
 	});
+
+
+   /* BACKLINKS */
+   $(function() {
+      $('.backlink a').click(backHandler);
+   });
 
 })(jQuery, this);
