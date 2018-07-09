@@ -468,7 +468,7 @@ function ch_custom_front_page($wp_query) {
    }
 
    // make single gallery sites work
-   if ( $wp_query->is_single() && !isset($wp_query->query[post_type]) ) {
+   if ( $wp_query->is_single() && !isset($wp_query->query['post_type']) ) {
       $wp_query->set('post_type', array('gallery', 'page', 'christina'));
    }
 
