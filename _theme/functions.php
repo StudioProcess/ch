@@ -440,7 +440,7 @@ function ch_ajax_get() {
 
 // match about and contact pages
 // (they don't automatically, because post_type gallery slug is set to '/', I think)
-add_rewrite_rule('^(about|contact)/?','index.php?pagename=$matches[1]','top');
+add_rewrite_rule('^(about|contact|datenschutz)/?','index.php?pagename=$matches[1]','top');
 // just needed on changes:
 // flush_rewrite_rules();
 
