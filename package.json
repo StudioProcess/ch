@@ -4,8 +4,11 @@
   "homepage": "http://christinahaeusler.at",
   "author": "Martin Leopold",
   "copyright": "2014",
-  "version": "2014.7.21",
-  "license": "MIT",
+  "version": "2018.12.30",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "grunt"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~1.0.0",
