@@ -4,7 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url('//fonts.googleapis.com/css?family=Karla:400');
+@import url("//fonts.googleapis.com/css?family=Karla:400");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -486,7 +486,7 @@ input:focus {
 \*------------------------------------*/
 /* wrapper */
 .wrapper {
-  width: 93.05556%;
+  width: 93.0555555556%;
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
@@ -642,6 +642,10 @@ body.about section.about .portrait {
   margin-bottom: 0;
 }
 
+#contact .social-media img {
+  background: none;
+}
+
 /*------------------------------------*\
 	GALLERY
 \*------------------------------------*/
@@ -672,7 +676,7 @@ body.single .info {
   display: none;
 }
 body.single .img {
-  margin-bottom: 3.47222%;
+  margin-bottom: 3.4722222222%;
 }
 body.single h1, body.single .img {
   text-align: center;
@@ -772,7 +776,7 @@ html.desktop body.archive .gallery.teaser {
   background-color: white;
 }
 html.desktop header {
-  width: 93.05556%;
+  width: 93.0555555556%;
   max-width: 1920px;
   margin: 0 auto;
   position: fixed;
@@ -872,7 +876,7 @@ html.desktop body.archive #info.open > *.opening, html.desktop body.archive #inf
 }
 html.desktop #gallery {
   width: 100%;
-  padding: 0 3.47222%;
+  padding: 0 3.4722222222%;
   top: 0;
   left: 0;
   bottom: 0;
